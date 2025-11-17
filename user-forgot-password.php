@@ -11,7 +11,7 @@ if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
         else {
 $email=$_POST['email'];
 $mobile=$_POST['mobile'];
-$newpassword=md5($_POST['newpassword']);
+$newpassword=($_POST['newpassword']);
   $sql ="SELECT EmailId FROM tblstudents WHERE EmailId=:email and MobileNumber=:mobile";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
